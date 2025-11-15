@@ -37,7 +37,7 @@ std::cout << "\n=== Deep copy tests (copy ctor and copy assignment) ===" << std:
 // Self assignment safety
 std::cout << "\n=== Self-assignment safety ===" << std::endl;
 {
-	Dog d; d = d;           // nic złego nie powinno się wydarzyć
+	Dog d; d = d;           // Nothing wrong should happens
 	Cat c; c = c;
 }
 

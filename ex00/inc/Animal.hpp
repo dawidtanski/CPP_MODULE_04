@@ -6,7 +6,7 @@
 /*   By: dtanski <dtanski@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/28 20:10:14 by dtanski           #+#    #+#             */
-/*   Updated: 2025/07/31 17:56:18 by dtanski          ###   ########.fr       */
+/*   Updated: 2025/11/15 17:03:09 by dtanski          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Animal
 	public:
 		Animal();
 		Animal(std::string type);
-		~Animal();
+		virtual ~Animal();
 		Animal(const Animal &src);
 		Animal &operator=(const Animal &src);
 		virtual void	makeSound() const;
