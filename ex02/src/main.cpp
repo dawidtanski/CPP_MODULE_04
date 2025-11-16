@@ -9,7 +9,7 @@ int main()
 
 // Testing abstract class
 std::cout << "Testing abstract class" << std::endl;
-// Animal x;
+// Animal x;  // ← Cannot instantiate abstract class (compilation error)
 
 const Animal* j = new Dog();
 const Animal* i = new Cat();
@@ -42,7 +42,7 @@ std::cout << "\n=== Deep copy tests (copy ctor and copy assignment) ===" << std:
 // Self assignment safety
 std::cout << "\n=== Self-assignment safety ===" << std::endl;
 {
-	Dog d; d = d;           // nic złego nie powinno się wydarzyć
+	Dog d; d = d;           // Nothing wrong should happens
 	Cat c; c = c;
 }
 
@@ -56,6 +56,19 @@ for (int k = 5; k < 10; k++)
 
 for (int k = 0; k < 10; k++)
 	delete animals_str[k];
+
+// Test virtual makeSound() through polymorphism
+std::cout << "\n=== Polymorphic makeSound() test ===" << std::endl;
+{
+	Animal* dog = new Dog();
+	Animal* cat = new Cat();
+	
+	dog->makeSound();  // Should print Dog sound
+	cat->makeSound();  // Should print Cat sound
+	
+	delete dog;
+	delete cat;
+}
 
 return 0;
 }
